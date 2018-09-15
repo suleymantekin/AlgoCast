@@ -13,12 +13,16 @@
 // }
 
 // Loop over the string
-function reverse(str) {
-    let reverse = '';
-    for (let char of str) {
-        reverse = char + reverse;
-    }
-    return reverse;
-}
+// function reverse(str) {
+//     let reverse = '';
+//     for (let char of str) {
+//         reverse = char + reverse;
+//     }
+//     return reverse;
+// }
 
+// Use array reduce method
+function reverse(str) {
+    return str.split('').reduce((rev, char) => char + rev, '')
+}
 module.exports = reverse;
