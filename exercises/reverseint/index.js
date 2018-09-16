@@ -21,4 +21,14 @@ function reverseInt(n) {
     return flag ? res * (-1) : res;
 }
 
+function reverseInt(n) {
+    const reversed = n
+        .toString()
+        .split('')
+        .reverse()
+        .join('');
+
+    return parseInt(reversed) * Math.sign(n);
+}
+
 module.exports = reverseInt;
