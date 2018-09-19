@@ -21,15 +21,21 @@
 // }
 
 // Iterative solution
+// function vowels(str) {
+//     const checker = ['a', 'e', 'i', 'o', 'u'];
+//     let count = 0;
+//     for (let char of str.toLowerCase()) {
+//         if (checker.includes(char)) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// RegExp solution
 function vowels(str) {
-    const checker = ['a', 'e', 'i', 'o', 'u'];
-    let count = 0;
-    for (let char of str.toLowerCase()) {
-        if (checker.includes(char)) {
-            count++;
-        }
-    }
-    return count;
+    const matches = str.match(/[aeiou]/gi);
+    return matches ? matches.length : 0;
 }
 
 module.exports = vowels;
