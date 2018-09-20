@@ -18,15 +18,40 @@
 // }
 
 // My recursive solution
-function fib(n, result = [0, 1]) {
-    if (n <= 1) {
-        return result[n];
-    }
-    if (result[n]) {
-        return result[n]
+// function fib(n, result = [0, 1]) {
+//     if (n <= 1) {
+//         return result[n];
+//     }
+//     if (result[n]) {
+//         return result[n]
+//     }
+
+//     return result[n] = fib(n - 1, result) + fib(n - 2, result);
+// }
+
+// Recursive memoize solution
+function memoize(fn) {
+    const cache = {};
+    return function (...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    };
+}
+
+function slowFib(n) {
+    if (n < 2) {
+        return n;
     }
 
-    return result[n] = fib(n - 1, result) + fib(n - 2, result);
+    return fib(n - 1) + fib(n - 2);
 }
+
+const fib = memoize(slowFib);
 
 module.exports = fib;
