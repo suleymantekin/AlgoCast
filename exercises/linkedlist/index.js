@@ -18,15 +18,27 @@ class LinkedList {
         this.head = new Node(data, this.head);
     }
 
+    // My implementation
+    // size() {
+    //     if (!this.head) {
+    //         return 0;
+    //     }
+    //     let counter = 1;
+    //     let head = this.head;
+    //     while (head.next !== null) {
+    //         counter++;
+    //         head = head.next;
+    //     }
+    //     return counter;
+    // }
+
+    // His implementation
     size() {
-        if (!this.head) {
-            return 0;
-        }
-        let counter = 1;
-        let head = this.head;
-        while (head.next !== null) {
+        let counter = 0;
+        let node = this.head;
+        while (node) {
             counter++;
-            head = head.next;
+            node = node.next;
         }
         return counter;
     }
