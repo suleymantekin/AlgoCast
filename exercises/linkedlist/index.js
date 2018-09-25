@@ -48,11 +48,17 @@ class LinkedList {
     }
 
     getLast() {
+        if (!this.head) {
+            return null;
+        }
+
         let node = this.head;
-        while (node.next) {
+        while (node) {
+            if (!node.next) {
+                return node;
+            }
             node = node.next;
         }
-        return node;
     }
 
     clear() {
