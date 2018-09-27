@@ -16,6 +16,9 @@ class Node {
         this.children = [];
     }
 
+    add(data) {
+        this.children.push(new Node(data));
+    }
 }
 
 class Tree { }
