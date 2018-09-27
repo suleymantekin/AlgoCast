@@ -20,9 +20,13 @@ class Node {
         this.children.push(new Node(data));
     }
 
+    // remove(data) {
+    //     let index = this.children.indexOf(new Node(data));
+    //     this.children.splice(index, 1);
+    // }
+
     remove(data) {
-        let index = this.children.indexOf(new Node(data));
-        this.children.splice(index, 1);
+        this.children = this.children.filter(node => node.data !== data)
     }
 }
 
