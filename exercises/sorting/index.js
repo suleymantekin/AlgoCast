@@ -29,7 +29,6 @@ function selectionSort(arr) {
             arr[indexOfMin] = arr[i];
             arr[i] = lesser;
         }
-
     }
     return arr;
 }
